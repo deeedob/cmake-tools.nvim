@@ -32,8 +32,9 @@ local const = {
         auto_close_when_success = true, -- typically, you can use it with the "always" option; it will auto-close the quickfix buffer if the execution is successful.
       },
       toggleterm = {
-        direction = "float", -- 'vertical' | 'horizontal' | 'tab' | 'float'
-        close_on_exit = false, -- whether close the terminal when exit
+        type = "executor",
+        direction = "horizontal", -- 'vertical' | 'horizontal' | 'tab' | 'float'
+        close_on_exit = true, -- whether close the terminal when exit
         auto_scroll = true, -- whether auto scroll to the bottom
       },
       overseer = {
@@ -74,7 +75,8 @@ local const = {
         auto_close_when_success = true, -- typically, you can use it with the "always" option; it will auto-close the quickfix buffer if the execution is successful.
       },
       toggleterm = {
-        direction = "float", -- 'vertical' | 'horizontal' | 'tab' | 'float'
+        type = "runner",
+        direction = "horizontal", -- 'vertical' | 'horizontal' | 'tab' | 'float'
         close_on_exit = false, -- whether close the terminal when exit
         auto_scroll = true, -- whether auto scroll to the bottom
       },
@@ -95,7 +97,7 @@ local const = {
         -- Window handling
         single_terminal_per_instance = true, -- Single instance, multiple windows
         single_terminal_per_tab = true, -- Single instance per tab
-        keep_terminal_static_location = true, -- Static location of the instance if avialable
+        keep_terminal_static_location = true, -- Static location of the instance if available
 
         -- Running Tasks
         start_insert = false, -- If you want to enter terminal with :startinsert upon using :CMakeRun
@@ -105,8 +107,8 @@ local const = {
     },
   },
   cmake_notifications = {
-    runner = { enabled = true },
-    executor = { enabled = true },
+    runner = { enabled = false },
+    executor = { enabled = false },
     spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }, -- icons used for progress display
     refresh_rate_ms = 100, -- how often to iterate icons
   },
